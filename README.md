@@ -134,9 +134,10 @@ Which method (if any) is preferred and why?
 ## Q16:
 C allows some appalling constructs. Is this construct legal, and if so what does
 this code do?
+```c
 int a = 5, b = 7, c;
 c = a +++ b;
-
+```
 Links: 
 [](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
 [](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)
