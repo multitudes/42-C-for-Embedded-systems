@@ -71,7 +71,7 @@ variables. Given an integer variable a, write two code fragments. The rst shoul
 set bit 3 of a. The second should clear bit 3 of a. In both cases, the remaining
 bits should be unmodified.
 
-# Accessing fixed memory locations
+# Accessing fixed memory locations
 ## Question 10:
 Embedded systems are often characterized by requiring the programmer to
 access a specic memory location. On a certain project it is required to set
@@ -81,7 +81,7 @@ compiler is a pure ANSI compiler. Write code to accomplish this task.
 # Interrupts
 ## Question 11:
 Interrupts are an important part of embedded systems. Consequently, many
-compiler vendors oer an extension to standard C to support interrupts. Typically,
+compiler vendors offer an extension to standard C to support interrupts. Typically,
 this new key word is __interrupt. The following code uses __interrupt to dene
 an interrupt service routine. Comment on the code.
 ```c
