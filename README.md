@@ -16,33 +16,33 @@ and returns the smaller of the two arguments.
 ## Question 3
 What is the purpose of the preprocessor directive #error?
 
-# Infinite loops
+# Infinite loops
 
 ## Question 4
-Innite loops often arise in embedded systems. How does one code an innite
+Infinite loops often arise in embedded systems. How does one code an infinite
 loop in C?
 
 ## Question 5
 Using the variable a, write down denitions for the following:
-a) An integer
-b) A pointer to an integer
-c) A pointer to a pointer to an integer
-d) An array of ten integers
-e) An array of ten pointers to integers
-f) A pointer to an array of ten integers
+a) An integer  
+b) A pointer to an integer  
+c) A pointer to a pointer to an integer  
+d) An array of ten integers  
+e) An array of ten pointers to integers  
+f) A pointer to an array of ten integers  
 g) A pointer to a function that takes an integer as an argument and returns
-an integer
+an integer  
 h) An array of ten pointers to functions that take an integer argument and
-return an integer
+return an integer  
 
 ## Question 6
-What are the uses of the keyword static?
+What are the uses of the keyword static?  
 
 ## Question 7
 What does the keyword const mean?
 
 ## Question 7.1
-What do the following incomplete2 declarations mean? 
+What do the following incomplete declarations mean? 
 ```C
 const int a ;
 int const a ;
@@ -52,7 +52,7 @@ int const ∗ a const;
 ```
 
 ## Question 8
-What does the keyword volatile mean? Give three different examples of its use.
+What does the keyword volatile mean? Give three different examples of its use.
 
 ## Question 8.1
 (a) Can a parameter be both const and volatile? Explain your answer.
