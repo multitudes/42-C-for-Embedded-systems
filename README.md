@@ -6,11 +6,13 @@ Very entertaining to read and study outside of a interview environment.
 # Preprocessor Questions
 
 ## Question 1
-Using the #dene statement, how would you declare a manifest constant that
-returns the number of seconds in a year? Disregard leap years in your answer.
+Using the #define statement, how would you declare a manifest constant that
+returns the number of seconds in a year? Disregard leap years in your answer.  
+
 ## Question 2
-Write the standard MIN macro. That is, a macro that takes two arguments
-and returns the smaller of the two arguments.
+Write the standard MIN macro. That is, a macro that takes two arguments
+and returns the smaller of the two arguments.  
+
 ## Question 3
 What is the purpose of the preprocessor directive #error?
 
