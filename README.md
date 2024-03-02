@@ -138,6 +138,37 @@ this code do?
 int a = 5, b = 7, c;
 c = a +++ b;
 ```
+
+
+# Answers
+
+## Q1
+
+## Q2
+
+## Q3
+The `#error` preprocessor directive in C and C++ is used to generate a compilation error with a custom error message.  
+It is often used to enforce certain conditions or constraints at compile time.  
+When the preprocessor encounters `#error`, it immediately halts the compilation process and outputs the specified error message along with the file name and line number where the `#error` directive was encountered.
+
+Here's a basic example of how `#error` can be used:
+
+```c
+#include <stdio.h>
+
+// Ensure that the architecture is supported
+#if !defined(__x86_64__) && !defined(__i386__)
+    #error "Unsupported architecture: Only x86_64 and i386 architectures are supported."
+#endif
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+```
+
+In this example, if the code is compiled on an architecture other than x86_64 or i386, the compilation will fail with the specified error message. This can be useful for ensuring that code is only compiled on supported platforms or meets certain requirements before compilation proceeds.
+
 Links: 
 [](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
 [](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)
