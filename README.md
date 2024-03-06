@@ -9,7 +9,7 @@
 
 ## Question 1
 Using the #define statement, how would you declare a manifest constant that
-returns the number of seconds in a year? Disregard leap years in your answer.  
+returns the number of seconds in a year?  Disregard leap years in your answer.  
 
 ## Question 2
 Write the standard MIN macro. That is, a macro that takes two arguments
