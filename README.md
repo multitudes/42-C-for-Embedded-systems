@@ -3,7 +3,7 @@
 > C is quirky, flawed, and an enormous success. — Dennis Ritchie
 
 10 Best Questions for Would-be Embedded Programmers.  
-Very entertaining to read and study outside of a interview environment.
+(Very entertaining to read and study outside of a interview environment.)
 
 # Preprocessor Questions
 
