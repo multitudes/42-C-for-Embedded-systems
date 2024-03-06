@@ -9,7 +9,8 @@
 
 ## Question 1
 Using the #define statement, how would you declare a manifest constant that
-returns the number of seconds in a year?  Disregard leap years in your answer.  
+returns the number of seconds in a year?  
+Disregard leap years in your answer.  
 
 ## Question 2
 Write the standard MIN macro. That is, a macro that takes two arguments
@@ -159,9 +160,28 @@ Thus, it is clearer, and penalty free to spell out how you are calculating the n
 rather than actually doing the calculation yourself.   
 (d) A realization that the expression will overflow an integer argument on a 16 bit machine hence the need  
 for the L, telling the compiler to treat the expression as a Long.  
+(e) As a bonus, if you modied the expression with a UL (indicating unsigned long),  
+then you are o to a great start because you are showing that you are mindful of the perils of signed  
+and unsigned types  and remember, first impressions count!  
 
 ## Q2
-
+```c
+#define MIN(A, B) ( (A) <= (B) ? (A) : (B) )
+```
+The purpose of this question is to test the following:  
+(a) Basic knowledge of the #define directive as used in macros.  
+This is important, because until the inline operator becomes part of standard C,  
+macros are the only portable way of generating inline code. Inline code is often necessary in embedded systems in
+order to achieve the required performance level.
+(b) Knowledge of the ternary conditional operator. This exists in C because
+it allows the compiler to potentially produce more optimal code than an if-
+then-else sequence. Given that performance is normally an issue in embedded
+systems, knowledge and use of this construct is important.
+(c) Understanding of the need to very carefully parenthesize arguments to
+macros.
+(d) I also use this question to start a discussion on the side eects of macros,
+e.g. what happens when you write code such as :
+l e a s t = MIN( ∗ p++, b ) ;
 
 ## Q3
 The `#error` preprocessor directive in C and C++ is used to generate a compilation error with a custom error message.  
