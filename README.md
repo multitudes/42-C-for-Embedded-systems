@@ -114,7 +114,9 @@ unsigned int zero = 0;
 unsigned int compzero = 0xFFFF ; /∗ 1's complement of zero ∗/
 ```
 -------------------------------------------------------------------------------
+
 # Bonus - Dynamic memory allocation
+
 ## Q14:
 Although not as common as in non-embedded computers, embedded systems
 still do dynamically allocate memory from the heap. What are the problems
@@ -141,12 +143,25 @@ int a = 5, b = 7, c;
 c = a +++ b;
 ```
 
+===================================================================================
 
 # Answers
 
 ## Q1
+```c
+#define SECONDS_PER_YEAR ( 60UL ∗ 60UL ∗ 24UL ∗ 365UL)
+```
+I'm looking for several things here:  
+(a) Basic knowledge of the #dene syntax (i.e. no semi-colon at the end, the need to parenthesize etc.).  
+(b) A good choice of name, with capitalization and underscores.   
+(c) An understanding that the pre-processor will evaluate constant expressions for you.  
+Thus, it is clearer, and penalty free to spell out how you are calculating the number of seconds in a year,  
+rather than actually doing the calculation yourself.   
+(d) A realization that the expression will overflow an integer argument on a 16 bit machine hence the need  
+for the L, telling the compiler to treat the expression as a Long.  
 
 ## Q2
+
 
 ## Q3
 The `#error` preprocessor directive in C and C++ is used to generate a compilation error with a custom error message.  
