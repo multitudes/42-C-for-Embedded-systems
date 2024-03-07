@@ -235,6 +235,150 @@ Candidates that propose this are either assembly language programmers (which
 is probably good), or else they are closet BASIC / FORTRAN programmers
 looking to get into a new field.
 
+## Q5
+
+The answers are:
+```
+int a; // An integer
+int *a; // A pointer to an integer
+int **a; // A pointer to a pointer to an integer
+int a[10]; // An array of 10 integers
+int *a[10]; // An array of 10 pointers to integers
+int (*a)[10]; // A pointer to an array of 10 integer
+int (*a)(int); // A pointer to a function a that takes an integer argument and returns an integer
+int (*a[10])(int); // An array of 10 pointers to functions that takes an integer argument and returns an integer
+```
+
+
+----------------------------------------------------
+## Static 
+
+People often claim that a couple of these are the sorts of thing that one looks
+up in textbooks  and I agree. While writing this article, I consulted textbooks
+to ensure the syntax was correct. However, I expect to be asked this question
+(or something close to it) when in an interview situation. Consequently, I make
+sure I know the answers  at least for the few hours of the interview. Candidates
+that don't know the answers (or at least most of them) are simply unprepared
+for the interview. If they can't be prepared for the interview, what will they be
+prepared for?
+
+## Q6
+What are the uses of the keyword static?
+This simple question is rarely answered completely. Static has three distinct
+uses in C:
+(a) A variable declared static within the body of a function maintains its value
+between function invocations.
+(b) A variable declared static within a module1 , (but outside the body of
+a function) is accessible by all functions within that module. It is not
+accessible by functions within any other module. That is, it is a localized
+global.
+(c) Functions declared static within a module may only be called by other
+functions within that module. That is, the scope of the function is localized
+to the module within which it is declared.
+Most candidates get the rst part correct. A reasonable number get the second
+part correct, while a pitiful number understand answer (c). This is a serious
+weakness in a candidate, since they obviously do not understand the importance
+and benets of localizing the scope of both data and code.
+
+## Const
+
+## Q7
+As soon as the interviewee says const means constant, I know I'm dealing
+with an amateur. Dan Saks has exhaustively covered const in the last year,
+such that every reader of ESP should be extremely familiar with what const
+can and cannot do for you. If you haven't been reading that column, suce
+it to say that const means read-only. Although this answer doesn't really do
+the subject justice, I'd accept it as a correct answer. (If you want the detailed
+answer, then read Saks' columns  carefully!).
+If the candidate gets the answer correct, then I'll ask him these supplemental
+questions:
+What do the following incomplete2 declarations mean?
+const int a ;
+int const a ;
+const int ∗ a ;
+int ∗ const a ;
+int const ∗ a const
+
+The rst two mean the same thing, namely a is a const (read-only) integer. The
+third means a is a pointer to a const integer (i.e., the integer isn't modiable,
+but the pointer is). The fourth declares a to be a const pointer to an integer
+(i.e., the integer pointed to by a is modiable, but the pointer is not). The nal
+declaration declares a to be a const pointer to a const integer (i.e., neither the
+integer pointed to by a, nor the pointer itself may be modied).
+If the candidate correctly answers these questions, I'll be impressed.
+Incidentally, one might wonder why I put so much emphasis on const, since it is
+very easy to write a correctly functioning program without ever using it. There
+are several reasons:
+(a) The use of const conveys some very useful information to someone reading
+your code. In eect, declaring a parameter const tells the user about its
+intended usage. If you spend a lot of time cleaning up the mess left by
+other people, then you'll quickly learn to appreciate this extra piece of
+information. (Of course, programmers that use const, rarely leave a mess
+for others to clean up...)
+(b) const has the potential for generating tighter code by giving the optimizer
+some additional information.
+(c) Code that uses const liberally is inherently protected by the compiler
+against inadvertent coding constructs that result in parameters being
+changed that should not be. In short, they tend to have fewer bugs.
+
+## Volatile
+
+## A8
+A volatile variable is one that can change unexpectedly. Consequently, the
+compiler can make no assumptions about the value of the variable. In particular,
+the optimizer must be careful to reload the variable every time it is used instead
+of holding a copy in a register. Examples of volatile variables are:
+(a) Hardware registers in peripherals (e.g., status registers)
+(b) Non-stack variables referenced within an interrupt service routine.
+(c) Variables shared by multiple tasks in a multi-threaded application.
+If a candidate does not know the answer to this question, they aren't hired. I
+consider this the most fundamental question that distinguishes between a `C
+programmer' and an `embedded systems programmer'. Embedded folks deal
+with hardware, interrupts, RTOSes, and the like. All of these require volatile
+variables. Failure to understand the concept of volatile will lead to disaster. On
+the (dubious) assumption that the interviewee gets this question correct, I like
+to probe a little deeper, to see if they really understand the full signicance of
+volatile. In particular, I'll ask them the following:
+Q8.1:
+(a) Can a parameter be both const and volatile? Explain your answer.
+(b) Can a pointer be volatile? Explain your answer.
+(c) What is wrong with the following function?:
+```
+int square(volatile int ∗ptr)
+{
+  return (∗ptr ∗ ∗ptr);
+}
+```
+The answers are as follows:
+(a) Yes. An example is a read only status register. It is volatile because it can
+change unexpectedly. It is const because the program should not attempt
+to modify it.
+(b) Yes. Although this is not very common. An example is when an interrupt
+service routine modies a pointer to a buer.
+(c) This one is wicked. The intent of the code is to return the square of
+the value pointed to by *ptr. However, since *ptr points to a volatile
+parameter, the compiler will generate code that looks something like this:
+```
+int square(volatile int ∗ptr)
+{
+  a = ∗ptr;
+  b = ∗ptr;
+  return a ∗ b;
+}
+```
+Since it is possible for the value of *ptr to change unexpectedly, it is possible
+for a and b to be dierent. Consequently, this code could return a number that
+is not a square! The correct way to code this is:
+```
+long square(volatile int ∗ptr)
+{
+  int a;
+  a = ∗ptr;
+  return a ∗ a;
+}
+```
+
+
 
 Links: 
 [](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
