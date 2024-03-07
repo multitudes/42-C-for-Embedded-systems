@@ -204,7 +204,37 @@ int main() {
 }
 ```
 
-In this example, if the code is compiled on an architecture other than x86_64 or i386, the compilation will fail with the specified error message. This can be useful for ensuring that code is only compiled on supported platforms or meets certain requirements before compilation proceeds.
+## Q4
+There are several solutions to this question. My preferred solution is:
+```c
+while ( 1 )
+{
+...
+}
+```
+Another common construct is:
+```c
+for ( ; ; )
+{
+...
+}
+```
+Personally, I dislike this construct because the syntax doesn't exactly spell out
+what is going on. Thus, if a candidate gives this as a solution, I'll use it as an
+opportunity to explore their rationale for doing so. If their answer is basically 
+I was taught to do it this way and I have never thought about it since  then
+it tells me something (bad) about them. Conversely, if they state that it's the
+K&R preferred method and the only way to get an infinite loop passed Lint, then they 
+score bonus points. A third solution is to use a goto:  
+Loop :
+```c
+...
+goto Loop ;
+```
+Candidates that propose this are either assembly language programmers (which
+is probably good), or else they are closet BASIC / FORTRAN programmers
+looking to get into a new field.
+
 
 Links: 
 [](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
