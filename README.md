@@ -8,7 +8,7 @@
 # Preprocessor Questions
 
 ## Question 1
-Using the #define statement, how would you declare a manifest constant that
+Using the `#define` statement, how would you declare a manifest constant that
 returns the number of seconds in a year?  
 Disregard leap years in your answer.  
 
@@ -233,7 +233,7 @@ goto Loop ;
 ```
 Candidates that propose this are either assembly language programmers (which
 is probably good), or else they are closet BASIC / FORTRAN programmers
-looking to get into a new field.
+looking to get into a new field.
 
 
 Links: 
