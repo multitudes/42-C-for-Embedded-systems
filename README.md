@@ -5,6 +5,10 @@
 10 Best Questions for Would-be Embedded Programmers.  
 (Very entertaining to read and study outside of a interview environment.)
 
+I found this pdf in the slack chammel of my school and I found it super interesting. I think this is the beauty of C. You never stop learning new things.  
+I was used to C as being compiled on 64 bit machines and many embedded systems dont have that.  I put the question first and then the answers at the bottom.  
+If you know where thiese questions come from pls let me know. Happy reading!
+
 # Preprocessor Questions
 
 ## Question 1
@@ -379,6 +383,6 @@ long square(volatile int ∗ptr)
 
 
 
-Links: 
-[](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
+Links:  
+[Efficient C Code for Eight-Bit MCUs](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
 [](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)
