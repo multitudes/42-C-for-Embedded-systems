@@ -186,6 +186,23 @@ macros.
 e.g. what happens when you write code such as :
 l e a s t = MIN( ∗ p++, b ) ;
 
+Letsa try to break down what is happening in the last case:  
+```c
+
+#define MIN(A, B) (A <= B ? A : B)
+	int z = 5;
+int *y = &z;
+int x = 10;
+int min_val = MIN(x,*y++) * 2;
+
+result:  
+I get min_val: -633542432
+```
+
+The reason is 
+The MIN macro is expanded as `(x <= *y++ ? x : *y++) * 2` .  
+Since x is 10 and *y is 5 (the value pointed to by y), the condition x <= *y++ evaluates to false, and the ternary operator selects *y++ (which increments the pointer y and returns its original value, 5), resulting in unexpected behavior.  
+
 ## Q3
 The `#error` preprocessor directive in C and C++ is used to generate a compilation error with a custom error message.  
 It is often used to enforce certain conditions or constraints at compile time.  
