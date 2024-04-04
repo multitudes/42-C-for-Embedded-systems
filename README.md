@@ -402,4 +402,5 @@ long square(volatile int ∗ptr)
 
 Links:  
 [Efficient C Code for Eight-Bit MCUs](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
-[](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)
+[](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)  
+[](https://owasp.org/www-community/attacks/Format_string_attack)  
