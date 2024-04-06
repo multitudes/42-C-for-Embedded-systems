@@ -400,12 +400,13 @@ long square(volatile int ∗ptr)
 
 
 
-Links:  
+
+# keywords and links:
+
 [Efficient C Code for Eight-Bit MCUs](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
 [](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)  
 [](https://owasp.org/www-community/attacks/Format_string_attack)  
 
-keywords:
 
 MCU  
 A microcontroller or microcontroller unit (MCU) is a small computer on a single integrated circuit. A microcontroller contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals. Program memory in the form of ferroelectric RAM, NOR flash or OTP ROM is also often included on chip, as well as a small amount of RAM. Microcontrollers are designed for embedded applications, in contrast to the microprocessors used in personal computers or other general purpose applications consisting of various discrete chips.
@@ -415,12 +416,8 @@ https://en.wikipedia.org/wiki/Microcontroller
 is the daisy a microcontroller?  
 https://electro-smith.com/products/daisy-seed  
 
-
-
-
 ARM microcontrollers
 https://youtu.be/ftjQ6YelAXE?si=-chsnLzxzoJteww2
-
 
 An IDE  
 https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
