@@ -29,7 +29,7 @@ Infinite loops often arise in embedded systems. How does one code an infinite
 loop in C?
 
 ## Question 5
-Using the variable a, write down denitions for the following:
+Using the variable a, write down definitions for the following:
 a) An integer  
 b) A pointer to an integer  
 c) A pointer to a pointer to an integer  
@@ -73,14 +73,14 @@ int square(volatile int ∗ptr)
 # Bit Manipulation
 ## Question 9:
 Embedded systems always require the user to manipulate bits in registers or
-variables. Given an integer variable a, write two code fragments. The rst should
+variables. Given an integer variable a, write two code fragments. The first should
 set bit 3 of a. The second should clear bit 3 of a. In both cases, the remaining
-bits should be unmodified.
+bits should be unmodified.
 
 # Accessing fixed memory locations
 ## Question 10:
 Embedded systems are often characterized by requiring the programmer to
-access a specic memory location. On a certain project it is required to set
+access a specific memory location. On a certain project it is required to set
 an integer variable at the absolute address 0x67a9 to the value 0xaa55. The
 compiler is a pure ANSI compiler. Write code to accomplish this task.
 
@@ -88,7 +88,7 @@ compiler is a pure ANSI compiler. Write code to accomplish this task.
 ## Question 11:
 Interrupts are an important part of embedded systems. Consequently, many
 compiler vendors offer an extension to standard C to support interrupts. Typically,
-this new key word is __interrupt. The following code uses __interrupt to dene
+this new key word is __interrupt. The following code uses __interrupt to define
 an interrupt service routine. Comment on the code.
 ```c
 __interrupt double compute_area ( double r a d i u s )
@@ -135,7 +135,7 @@ consider the following code fragment:
 #define dPS struct s ∗
 typedef struct s ∗ tPS ;
 ```
-The intent in both cases is to dene dPS and tPS to be pointers to structure s.
+The intent in both cases is to define dPS and tPS to be pointers to structure s.
 Which method (if any) is preferred and why?
 
 # Obfuscated syntax
@@ -156,23 +156,23 @@ c = a +++ b;
 #define SECONDS_PER_YEAR ( 60UL ∗ 60UL ∗ 24UL ∗ 365UL)
 ```
 I'm looking for several things here:  
-(a) Basic knowledge of the #dene syntax (i.e. no semi-colon at the end, the need to parenthesize etc.).  
+(a) Basic knowledge of the #define syntax (i.e. no semi-colon at the end, the need to parenthesize etc.).  
 (b) A good choice of name, with capitalization and underscores.   
 (c) An understanding that the pre-processor will evaluate constant expressions for you.  
 Thus, it is clearer, and penalty free to spell out how you are calculating the number of seconds in a year,  
 rather than actually doing the calculation yourself.   
 (d) A realization that the expression will overflow an integer argument on a 16 bit machine hence the need  
 for the L, telling the compiler to treat the expression as a Long.  
-(e) As a bonus, if you modied the expression with a UL (indicating unsigned long),  
+(e) As a bonus, if you modified the expression with a UL (indicating unsigned long),  
 then you are o to a great start because you are showing that you are mindful of the perils of signed  
-and unsigned types  and remember, first impressions count!  
+and unsigned types  and remember, fifirst impressions count!  
 
 ## Q2
 ```c
 #define MIN(A, B) ( (A) <= (B) ? (A) : (B) )
 ```
 The purpose of this question is to test the following:  
-(a) Basic knowledge of the #define directive as used in macros.  
+(a) Basic knowledge of the #defifine directive as used in macros.  
 This is important, because until the inline operator becomes part of standard C,  
 macros are the only portable way of generating inline code. Inline code is often necessary in embedded systems in
 order to achieve the required performance level.
@@ -244,7 +244,7 @@ what is going on. Thus, if a candidate gives this as a solution, I'll use it as 
 opportunity to explore their rationale for doing so. If their answer is basically  
 I was taught to do it this way and I have never thought about it since then
 it tells me something (bad) about them. Conversely, if they state that it's the
-K&R preferred method and the only way to get an infinite loop passed Lint, then they 
+K&R preferred method and the only way to get an infifinite loop passed Lint, then they 
 score bonus points. A third solution is to use a goto:  
 Loop :
 ```c
@@ -274,10 +274,10 @@ int (*a[10])(int); // An array of 10 pointers to functions that takes an integer
 ## Static 
 
 People often claim that a couple of these are the sorts of thing that one looks
-up in textbooks  and I agree. While writing this article, I consulted textbooks
+up in textbooks and I agree. While writing this article, I consulted textbooks
 to ensure the syntax was correct. However, I expect to be asked this question
 (or something close to it) when in an interview situation. Consequently, I make
-sure I know the answers  at least for the few hours of the interview. Candidates
+sure I know the answers at least for the few hours of the interview. Candidates
 that don't know the answers (or at least most of them) are simply unprepared
 for the interview. If they can't be prepared for the interview, what will they be
 prepared for?
@@ -295,10 +295,10 @@ global.
 (c) Functions declared static within a module may only be called by other
 functions within that module. That is, the scope of the function is localized
 to the module within which it is declared.
-Most candidates get the rst part correct. A reasonable number get the second
+Most candidates get the first part correct. A reasonable number get the second
 part correct, while a pitiful number understand answer (c). This is a serious
 weakness in a candidate, since they obviously do not understand the importance
-and benets of localizing the scope of both data and code.
+and benefits of localizing the scope of both data and code.
 
 ## Const
 
@@ -306,10 +306,10 @@ and benets of localizing the scope of both data and code.
 As soon as the interviewee says const means constant, I know I'm dealing
 with an amateur. Dan Saks has exhaustively covered const in the last year,
 such that every reader of ESP should be extremely familiar with what const
-can and cannot do for you. If you haven't been reading that column, suce
-it to say that const means read-only. Although this answer doesn't really do
+can and cannot do for you. If you haven't been reading that column, suffice
+it to say that const means read-only. Although this answer doesn't really do
 the subject justice, I'd accept it as a correct answer. (If you want the detailed
-answer, then read Saks' columns  carefully!).
+answer, then read Saks' columns carefully!).
 If the candidate gets the answer correct, then I'll ask him these supplemental
 questions:
 What do the following incomplete2 declarations mean?
@@ -319,12 +319,12 @@ const int ∗ a ;
 int ∗ const a ;
 int const ∗ a const
 
-The rst two mean the same thing, namely a is a const (read-only) integer. The
-third means a is a pointer to a const integer (i.e., the integer isn't modiable,
+The first two mean the same thing, namely a is a const (read-only) integer. The
+third means a is a pointer to a const integer (i.e., the integer isn't modifiable,
 but the pointer is). The fourth declares a to be a const pointer to an integer
-(i.e., the integer pointed to by a is modiable, but the pointer is not). The nal
+(i.e., the integer pointed to by a is modifiable, but the pointer is not). The final
 declaration declares a to be a const pointer to a const integer (i.e., neither the
-integer pointed to by a, nor the pointer itself may be modied).
+integer pointed to by a, nor the pointer itself may be modified).
 If the candidate correctly answers these questions, I'll be impressed.
 Incidentally, one might wonder why I put so much emphasis on const, since it is
 very easy to write a correctly functioning program without ever using it. There
@@ -357,7 +357,7 @@ programmer' and an `embedded systems programmer'. Embedded folks deal
 with hardware, interrupts, RTOSes, and the like. All of these require volatile
 variables. Failure to understand the concept of volatile will lead to disaster. On
 the (dubious) assumption that the interviewee gets this question correct, I like
-to probe a little deeper, to see if they really understand the full signicance of
+to probe a little deeper, to see if they really understand the full significance of
 volatile. In particular, I'll ask them the following:
 Q8.1:
 (a) Can a parameter be both const and volatile? Explain your answer.
@@ -374,7 +374,7 @@ The answers are as follows:
 change unexpectedly. It is const because the program should not attempt
 to modify it.
 (b) Yes. Although this is not very common. An example is when an interrupt
-service routine modies a pointer to a buer.
+service routine modifies a pointer to a buffer.
 (c) This one is wicked. The intent of the code is to return the square of
 the value pointed to by *ptr. However, since *ptr points to a volatile
 parameter, the compiler will generate code that looks something like this:
@@ -387,7 +387,7 @@ int square(volatile int ∗ptr)
 }
 ```
 Since it is possible for the value of *ptr to change unexpectedly, it is possible
-for a and b to be dierent. Consequently, this code could return a number that
+for a and b to be different. Consequently, this code could return a number that
 is not a square! The correct way to code this is:
 ```
 long square(volatile int ∗ptr)
@@ -404,3 +404,37 @@ Links:
 [Efficient C Code for Eight-Bit MCUs](https://rmbconsulting.us/Publications/ErrorDirective.pdf)  
 [](https://rmbconsulting.us/Publications/Efficient%20C%20Code.pdf)  
 [](https://owasp.org/www-community/attacks/Format_string_attack)  
+
+keywords:
+
+MCU  
+A microcontroller or microcontroller unit (MCU) is a small computer on a single integrated circuit. A microcontroller contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals. Program memory in the form of ferroelectric RAM, NOR flash or OTP ROM is also often included on chip, as well as a small amount of RAM. Microcontrollers are designed for embedded applications, in contrast to the microprocessors used in personal computers or other general purpose applications consisting of various discrete chips.
+In modern terminology, a microcontroller is similar to, but less sophisticated than, a system on a chip (SoC). A SoC may include a microcontroller as one of its components, but usually integrates it with advanced peripherals like a graphics processing unit (GPU), a Wi-Fi module, or one or more coprocessors.  
+https://en.wikipedia.org/wiki/Microcontroller  
+
+is the daisy a microcontroller?  
+https://electro-smith.com/products/daisy-seed  
+
+
+
+
+ARM microcontrollers
+https://youtu.be/ftjQ6YelAXE?si=-chsnLzxzoJteww2
+
+
+An IDE  
+https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
+
+Atmel AVR microcontrollers
+https://en.wikipedia.org/wiki/AVR_microcontrollers
+
+ISP - In system programming
+https://en.wikipedia.org/wiki/In-system_programming#:~:text=In%2Dsystem%20programming%20(ISP),prior%20to%20installing%20it%20into
+
+Atmel ATTiny10  
+https://youtu.be/ra7bT74EGUs?si=w6eaonMbj9SneBwL  
+
+8bit computer  
+https://eater.net/8bit
+
+
